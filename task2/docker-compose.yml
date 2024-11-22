@@ -1,0 +1,18 @@
+version: '3'
+services:
+  goit-cs-hw-02:
+    image: max0il/goit-cs-hw-02
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:12
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 567234
+      POSTGRES_DB: hw02
+    ports:
+      - "5432:5432"
